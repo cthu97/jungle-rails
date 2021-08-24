@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe User, type: :model do
+RSpec.describe User, type: :model do
   describe "Validations" do
     it "is valid with matching user and pw" do
       @user = User.new(name: "tester", email: "test@test.com", password: "fiveletters", password_confirmation: "fiveletters")
@@ -37,7 +37,7 @@ Rspec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
   end
-
+end
     describe '.authenticate_with_credentials' do
       it 'can login with registered email and password' do
         @user = User.create(name: "tester", email: "test@test.com", password:"fiveletters", password_confirmation:"fiveletters")
