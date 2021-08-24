@@ -37,10 +37,24 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
   end
-end
-    describe '.authenticate_with_credentials' do
-      it 'can login with registered email and password' do
+
+
+    describe ".authenticate_with_credentials" do
+      it "can login with registered email and password" do
         @user = User.create(name: "tester", email: "test@test.com", password:"fiveletters", password_confirmation:"fiveletters")
         expect(User.authenticate_with_credentials("test@test.com", "fiveletters")).to eq(@user)
       end
+      
+      it "can login even with white spaces in email" do
+        @user = User.create(name: "tester", email: "test@test.com", password:"fiveletters", password_confirmation:"fiveletters")
+       
+        expect(User.authenticate_with_credentials("     test@test.com     ", "fiveletters")).to eq(@user)
+      end
+
+      it "can login as it is not case sensitive" do
+        @user = User.create(name: "tester", email: "test@test.com", password:"fiveletters", password_confirmation:"fiveletters")
+
+        expect(User.authenticate_with_credentials("teSt@TEST.com", "fiveletters")).to eq(@user)
+      end
+    end
 end
