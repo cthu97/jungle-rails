@@ -19,10 +19,10 @@ RSpec.feature "Visitor clicks on an item and is redirected to the product page",
   scenario "They click on the first product" do
     visit root_path
     first(".btn-default").click
-    
+
     expect(page).to have_css 'article.product', count: 10
     expect(page).to have_css '.product-detail'
-    save_screenshot
+   # save_screenshot
   end
 
 end
