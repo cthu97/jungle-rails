@@ -24,7 +24,7 @@ def create
     session[:user_id] = user.id
     redirect_to '/'
   else
-    redirect to '/login'
+    redirect_to '/login'
   end
 end
 

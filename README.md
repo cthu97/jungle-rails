@@ -1,6 +1,21 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 with stripe verification API.
+
+# Features
+* View store products, able to see sold out ones as well
+* Add any item into cart 
+* Can order and check out items that will lead to a confirmation receipt with product details
+* Has admin functionalities, can manage products and categories
+* About us page shows policy and store detail
+
+# Final Product
+
+![rootpath](docs/loggedinuser.png)
+
+![item](docs/item.png)
+
+![orderconfirm](docs/orderconfirm.png)
 
 ## Additional Steps for Apple M1 Machines
 
